@@ -1,0 +1,3 @@
+{% for entry in entries %}
+<a href="{% url 'entries:entry_detail' pk=entry.pk %}">{{ entry.title }}</a>
+{% endfor %}

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'accounts.User'
+
 
 # Application definition
 DJANGO_APPS = (
@@ -43,7 +45,9 @@ THIRD_PARTY_APPS = (
 
 LOCAL_APPS = (
     'entries',
+    'accounts',
 ) 
+
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE_CLASSES = (
