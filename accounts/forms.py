@@ -3,9 +3,6 @@ from django import forms
 from .models import User
 
 class UserCreationForm(forms.ModelForm):
-	"""
-	Stolen code from django tutorial
-	"""
 	password1 = forms.CharField(label='password',
 		widget = forms.PasswordInput)
 	password2 = forms.CharField(label='repeat password',
@@ -13,8 +10,9 @@ class UserCreationForm(forms.ModelForm):
 
 	class Meta:
 		model =	User
-		fields = ('email', 'first_name', 'last_name')
+		fields = ['email', 'first_name', 'last_name']
 
+    #overrides the clean password method for password2
 	def clean_password2(self):
 		password1 = self.cleaned_data.get('password1')
 		password2 = self.cleaned_data.get('password2')

@@ -1,3 +1,3 @@
-{% for entry in entries %}
+{% for entry in object_list %}
 <a href="{% url 'entries:entry_detail' pk=entry.pk %}">{{ entry.title }}</a>
 {% endfor %}

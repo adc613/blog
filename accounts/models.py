@@ -22,10 +22,12 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, email, first_name, last_name, password):
-        user = create_user(email, first_name, last_name, password)
+    def create_superuser(self, email, password, first_name="John",
+            last_name="Doe"):
+        user = self.create_user(email,password, first_name, last_name)
         user.is_active=True;
         user.is_superuser=True
+        user.is_staff=True
         user.save()
         return user
 
@@ -37,6 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=32) 
     is_active = models.BooleanField(default=False)
     is_superuser = False
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
 
@@ -47,6 +50,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name():
         return self.first_name
-
-    def __unicode__():
-        return self.email

@@ -6,4 +6,4 @@ class EntryCreationForm(ModelForm):
 
     class Meta:
         model = Entry
-        fields = ['article','title']
+        fields = ['article', 'title']

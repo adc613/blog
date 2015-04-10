@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -18,7 +19,7 @@ class LoginView(View):
 
         user = authenticate(username=username, password=password)
         if user is not None and user.is_active:
-            login(user)
+            login(request,user)
 
         return HttpResponseRedirect(reverse('home'))
         
@@ -33,5 +34,7 @@ class UserCreateView(View):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request,"You're now a user")
 
+        messages.error(request, "didn't work bitch")
         return HttpResponseRedirect(reverse('home'))

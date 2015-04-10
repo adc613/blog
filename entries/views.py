@@ -23,13 +23,15 @@ class EntryCreateView(View):
 
     @method_decorator(login_required)
     def get(self,request):
-        return render(request, self.template_name, {'form' : form})
+        return render(request, self.template_name, {'form' : self.form})
 
     @method_decorator(login_required)
     def post(self, request):
+        form = EntryCreationForm(request.POST)
+        user = request.user
         if form.is_valid():
             entry = form.save(commit=False)
-            entry.creator = request.user
+            entry.creator = user
             entry.save()
 
         return HttpResponseRedirect(reverse('home'))
