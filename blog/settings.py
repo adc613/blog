@@ -25,7 +25,7 @@ SECRET_KEY = '2c&jyvabk)5oek4n8r3uy347*^^ei&vg0j08lg98hhpljthy7h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.techlyfe.me']
 
 AUTH_USER_MODEL = 'accounts.User'
 
