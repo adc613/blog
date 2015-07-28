@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2c&jyvabk)5oek4n8r3uy347*^^ei&vg0j08lg98hhpljthy7h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.techlyfe.me']
 
@@ -80,19 +80,28 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+	    'ENGINE': 'mysql.connector.django',
+            'NAME': 'blog',
+            'USER': 'blog_user',
+            'PASSWORD': 'blog_secret_password_847',
+        }
+    }
 
 
 # Internationalization
