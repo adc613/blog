@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -11,6 +12,7 @@
         {% load staticfiles %}
 
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <script src="{% static 'js/home.js' %}"></script>
     </head>
     <body >
         <div class="container">
@@ -18,18 +20,19 @@
             </div>
         </div>
             <div class="row" id="entry_list" style="max-width:700px;">
-                <div class="col-xs-12 text-center">
+                <div class="col-xs-12 text-center header">
                     <h1>TechLyfe</h1>
-                    <p>A person blog by Adam Collins and Arlen Darcy</p>
+                    <p>A personal blog by Adam Collins and Arlen Darcy</p>
                 </div>
                 {% for entry in object_list %}
                 <div class="col-xs-12 text-center entry">
-                    <a href="{% url 'entries:entry_detail' pk=entry.pk %}">
+                        <img src="/static/imgs/iphone-6.jpg" class="img-responsive img"/>
                         <h2>{{ entry.title }}</h2>
                         <h4>by: {{ entry.author.first_name }}</h4>
                         <br>
-                        <p> {{ entry.article }} </p>
-                    </a>
+                        <p id="p_{{ forloop.counter }}"> {{ entry.article }} </p>
+                        <br>
+                        <button id="btn_{{ forloop.counter }}" style="background-image:none" value="{{ forloop.counter }}"  class="btn btn-default read-more-btn">Read More</button>
                 </div>
                 {% endfor %}
             </div>

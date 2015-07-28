@@ -5,7 +5,7 @@ body {
 
 .container {
     position: absolute;
-    background-image: url("/static/imgs/wire.jpg");
+    background-image: url("/static/imgs/water.jpg");
     height:100%;
     width:100%;
     background-size:100%;
@@ -26,4 +26,49 @@ body {
     background-color: white;
     position: relative;
     overflow: hidden;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
+
+.entry p {
+    height:150px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    word-wrap:normal;
+    margin: 5px 5px 5px 5px;
+    font-size: 115%;
+    line-height:150%;
+}
+
+.img {
+    width:100%;
+}
+
+.btn {
+    color: blue;
+    background-color:white;
+    border: 1px solid blue;
+    border-radius:0px;
+}
+
+.btn:hover {
+    color:blue;
+    border: 1px solid blue;
+    background-color:white;
+    background-image:none;
+}
+
+.header {
+    margin-bottom: 9%;
+}
+
+.header p {
+    color:black;
+    font-size:100%;
+}
+
+.header h1 {
+    font-size:400%;
+}
+
