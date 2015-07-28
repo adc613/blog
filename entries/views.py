@@ -13,6 +13,7 @@ from .forms import EntryCreationForm
 # Create your views here.
 class EntryListView(ListView):
     model = Entry
+    template_name="blog/home.html"
 
 class EntryDetailView(DetailView):
     model = Entry

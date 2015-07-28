@@ -8,7 +8,8 @@ class Entry(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True, null=True)
     last_modified = models.DateTimeField(auto_now=True, null=True)
     author = models.ForeignKey('accounts.User', null=True)
+    image = models.ImageField()
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s' % (self.title)
 

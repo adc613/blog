@@ -1,0 +1,29 @@
+body {
+    height:100%;
+    width:100%;
+}
+
+.container {
+    position: absolute;
+    background-image: url("/static/imgs/wire.jpg");
+    height:100%;
+    width:100%;
+    background-size:100%;
+}
+
+
+#entry_list {
+    position: relative;
+    padding: 9px 9px 9px 9px;
+    margin: 0 auto;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+.entry {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}

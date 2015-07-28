@@ -1,3 +1,41 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        {% load staticfiles %}
+
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body >
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+            <div class="row" id="entry_list" style="max-width:700px;">
+                <div class="col-xs-12 text-center">
+                    <h1>TechLyfe</h1>
+                    <p>A person blog by Adam Collins and Arlen Darcy</p>
+                </div>
+                {% for entry in object_list %}
+                <div class="col-xs-12 text-center entry">
+                    <a href="{% url 'entries:entry_detail' pk=entry.pk %}">
+                        <h2>{{ entry.title }}</h2>
+                        <h4>by: {{ entry.author.first_name }}</h4>
+                        <br>
+                        <p> {{ entry.article }} </p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+    </body>
+</html>
+<!---
 <h1>
     Hello World
 </h1>
@@ -9,3 +47,4 @@
     {{ message }}
     
 {% endfor %}
+--->

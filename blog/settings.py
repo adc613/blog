@@ -41,11 +41,13 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'debug_toolbar',
 )
 
 LOCAL_APPS = (
     'entries',
     'accounts',
+    'debate',
 ) 
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -113,3 +115,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "static-only"),
+    )
