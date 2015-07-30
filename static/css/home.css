@@ -1,6 +1,9 @@
 body {
     height:100%;
     width:100%;
+    font-size:16px;
+    font-family: 'Droid Sans', sans-serif;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -38,9 +41,13 @@ body {
     overflow: hidden;
     text-overflow:ellipsis;
     word-wrap:normal;
-    margin: 5px 5px 5px 5px;
+    margin: 10px 10px 10px 10px;
     font-size: 115%;
     line-height:150%;
+    font-weight:100;
+    color: #636363;
+    float:right;
+    
 }
 
 .img {
@@ -74,3 +81,7 @@ body {
     font-size:400%;
 }
 
+body {
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+}
