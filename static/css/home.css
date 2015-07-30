@@ -18,11 +18,13 @@ body {
     margin: 0 auto;
     max-height: 100%;
     overflow: scroll;
+    width: 100%;
 }
 
 .entry {
+    max-width:700px;
+    margin: 0 auto;
     margin-bottom: 20px;
-    width: 100%;
     background-color: white;
     position: relative;
     overflow: hidden;
@@ -38,7 +40,6 @@ body {
     word-wrap:normal;
     margin: 5px 5px 5px 5px;
     font-size: 115%;
-    font-size: 2.2em;
     line-height:150%;
 }
 

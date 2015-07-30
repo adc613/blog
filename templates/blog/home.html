@@ -11,6 +11,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         {% load staticfiles %}
 
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
         <script src="{% static 'js/home.js' %}"></script>
     </head>
@@ -25,11 +26,11 @@
                     <p>A personal blog by Adam Collins and Arlen Darcy</p>
                 </div>
                 {% for entry in object_list %}
-                <div class="col-xs-12 text-center">
+                <div class="col-xs-12">
                     <div class="entry">
                         <img src="/static/imgs/iphone-6.jpg" class="img-responsive img"/>
-                        <h2>{{ entry.title }}</h2>
-                        <h4>by: {{ entry.author.first_name }}</h4>
+                        <h2 class="text-center">{{ entry.title }}</h2>
+                        <h4 class="text-center">by: {{ entry.author.first_name }}</h4>
                         <br>
                         <p id="p_{{ forloop.counter }}"> {{ entry.article }} </p>
                         <br>
