@@ -68,6 +68,27 @@ body {
     background-image:none;
 }
 
+.btn:focus {
+    color:blue;
+    border: 1px solid blue;
+    background-color:white;
+    background-image:none;
+}
+
+.btn:active {
+    color:blue;
+    border: 1px solid blue;
+    background-color:white;
+    background-image:none;
+}
+
+.btn:target {
+    color:blue;
+    border: 1px solid blue;
+    background-color:white;
+    background-image:none;
+}
+
 .header {
     margin-bottom: 9%;
 }
