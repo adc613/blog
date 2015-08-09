@@ -16,43 +16,53 @@
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
         <script src="{% static 'js/home.js' %}"></script>
     </head>
-    <body >
+
+    <body>
+
         <div class="container">
             <div class="row">
             </div>
         </div>
-            <div class="row" id="entry_list">
-                <div class="col-xs-12 text-center header">
-                    <h1>TechLyfe</h1>
-                    <p>A personal blog by Adam Collins and Arlen Darcy</p>
-                </div>
-                {% for entry in object_list %}
-                <div class="col-xs-12">
-                    <div class="entry">
-                        <img src="{{ entry.image.url }}" class="img-responsive img"/>
-                        <h2 class="text-center">{{ entry.title }}</h2>
-                        <h4 class="text-center">by: {{ entry.author.first_name }}</h4>
-                        <br>
-                        <p id="p_{{ forloop.counter }}"> {{ entry.article }} </p>
-                        <br>
-                        <div class="text-center">
-                            <button id="btn_{{ forloop.counter }}" style="background-image:none" value="{{ forloop.counter }}"  class="btn btn-default read-more-btn">Read More</button>
-                        </div>
+        
+        <div class="row" id="entry_list">
+
+            <div class="col-xs-12 text-center header">
+                <h1>TechLyfe</h1>
+                <p>A personal blog by Adam Collins and Arlen Darcy</p>
+            </div>
+
+            {% for entry in object_list %}
+            <div class="col-xs-12">
+                <div class="entry">
+                    <img src="{{ entry.image.url }}" class="img-responsive img"/>
+                    <h2 class="text-center">{{ entry.title }}</h2>
+                    <h6 class="text-center">{{ entry.get_date }}</h6>
+                    <br>
+                    <img src="{{ entry.author.headshot.url }}" class="img-responsive img-circle img-center">
+                    <h4 class="text-center">by: {{ entry.author.first_name }}</h4>
+                    <br>
+                    <p id="p_{{ forloop.counter }}"> {{ entry.article }} </p>
+                    <br>
+                    <div class="text-center">
+                        <button id="btn_{{ forloop.counter }}" style="background-image:none" value="{{ forloop.counter }}"  class="btn btn-default read-more-btn">Read More</button>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
+
+        </div>
+
     </body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-66111763-1', 'auto');
-  ga('send', 'pageview');
+      ga('create', 'UA-66111763-1', 'auto');
+      ga('send', 'pageview');
 
-</script>
+    </script>
 </html>
 <!---
 <h1>

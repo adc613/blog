@@ -33,8 +33,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     creation_date = models.DateTimeField(auto_now_add=True, editable=False)
-    username = models.CharField(max_length=32)
     email = models.EmailField(unique=True)
+    headshot = models.ImageField()
     first_name = models.CharField(max_length=32) 
     last_name = models.CharField(max_length=32) 
     is_active = models.BooleanField(default=False)

@@ -13,3 +13,26 @@ class Entry(models.Model):
     def __str__(self):
         return u'%s' % (self.title)
 
+    def get_date(self):
+        year = self.creation_date.year
+        month = self.creation_date.month
+        day = self.creation_date.day
+
+        month_converter_dic = [
+                'error',
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'December'
+                ]
+
+        date = month_converter_dic[month] + ', ' + str(day) + ' ' + str(year)
+
+        return date

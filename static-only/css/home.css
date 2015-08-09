@@ -81,8 +81,11 @@ body {
     font-size:400%;
 }
 
-@media(max-width: 800px){
-    body {
-        font-size:24px;
-    }
+body {
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+}
+
+.img-center {
+    margin: 0 auto;
 }

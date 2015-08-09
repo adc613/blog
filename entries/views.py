@@ -15,6 +15,9 @@ class EntryListView(ListView):
     model = Entry
     template_name="blog/home.html"
 
+    def get_queryset(self):
+        return self.model.objects.order_by('-creation_date')
+
 class EntryDetailView(DetailView):
     model = Entry
 
