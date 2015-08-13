@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$', EntryListView.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^debate/', include('debate.urls', namespace='debate')),
     url(r'^entries/', include('entries.urls', namespace='entries')),
 ]
 
