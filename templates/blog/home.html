@@ -41,11 +41,11 @@
                     <img src="{{ entry.author.headshot.url }}" class="img-responsive img-circle img-center " style="max-width:100px;">
                     <h4 class="text-center">by: {{ entry.author.first_name }}</h4>
                     <br>
-                    <p id="p_{{ forloop.counter }}"> {{ entry.article }} </p>
-                    <br>
-                    <div class="text-center">
-                        <button id="btn_{{ forloop.counter }}" style="background-image:none" value="{{ forloop.counter }}"  class="btn read-more-btn">Read More</button>
+                    <div id="p_{{ forloop.counter }}"> 
+                        {{ entry.article|linebreaks }}
                     </div>
+                    <br>
+                        <button id="btn_{{ forloop.counter }}" style="background-image:none; width:95%; margin-left:2.5%; " value="{{ forloop.counter }}"  class="btn read-more-btn">Read More</button>
                 </div>
             </div>
             {% endfor %}
