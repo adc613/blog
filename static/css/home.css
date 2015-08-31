@@ -36,7 +36,7 @@ body {
     padding-right: 0px;
 }
 
-.entry p {
+.entry div {
     height:150px;
     overflow: hidden;
     text-overflow:ellipsis;
@@ -110,3 +110,5 @@ body {
 .img-center {
     margin: 0 auto;
 }
+
+
