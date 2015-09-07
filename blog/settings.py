@@ -20,12 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2c&jyvabk)5oek4n8r3uy347*^^ei&vg0j08lg98hhpljthy7h'
+SECRET_KEY = os.environ['BLOG_SECRET_KEY']
+print(SECRET_KEY)
+print(os.environ['BLOG_SECRET_KEY'])
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.techlyfe.me']
+ALLOWED_HOSTS = ['.newagehacker.com','.techlyfe.me']
 
 AUTH_USER_MODEL = 'accounts.User'
 
