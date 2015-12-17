@@ -30,6 +30,7 @@ class Entry(models.Model):
                 'August',
                 'September',
                 'October',
+                'November',
                 'December'
                 ]
 
