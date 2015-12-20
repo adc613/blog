@@ -1,0 +1,12 @@
+<div class="col-xs-12">
+  <div class="entry" ng-repeat="entry in articles">
+    <h2 class="text-center">[[ entry.title ]]</h2>
+    <br>
+    <br>
+    <div id="p_[[ entry.id ]]"> 
+        [[ entry.article ]]
+    </div>
+    <br>
+    <button id="btn_[[ entry.id ]]" style="background-image:none; width:95%; margin-left:2.5%; " value="{{ forloop.counter }}"  class="btn read-more-btn">Read More</button>
+  </div>
+</div>

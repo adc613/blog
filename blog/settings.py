@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['BLOG_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.newagehacker.com', '.techlyfe.me']
 
@@ -42,6 +42,7 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     'debug_toolbar',
+    'rest_framework',
 )
 
 LOCAL_APPS = (

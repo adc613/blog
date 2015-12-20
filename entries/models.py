@@ -1,7 +1,6 @@
 from django.db import models
-from datetime import datetime
 
-# Create your models here.
+
 class Entry(models.Model):
     title = models.CharField(max_length=255)
     article = models.TextField(default="nothing")
@@ -18,22 +17,22 @@ class Entry(models.Model):
         month = self.creation_date.month
         day = self.creation_date.day
 
-        month_converter_dic = [
-                'error',
-                'January',
-                'February',
-                'March',
-                'April',
-                'May',
-                'June',
-                'July',
-                'August',
-                'September',
-                'October',
-                'November',
-                'December'
-                ]
+        month_converter_list = [
+            'error',
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+            ]
 
-        date = month_converter_dic[month] + ', ' + str(day) + ' ' + str(year)
+        date = month_converter_list[month] + ', ' + str(day) + ' ' + str(year)
 
         return date
