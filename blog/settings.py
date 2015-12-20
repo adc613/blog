@@ -25,7 +25,7 @@ SECRET_KEY = os.environ['BLOG_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.newagehacker.com','.techlyfe.me']
+ALLOWED_HOSTS = ['.newagehacker.com', '.techlyfe.me']
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -48,7 +48,7 @@ LOCAL_APPS = (
     'entries',
     'accounts',
     'debate',
-) 
+)
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -96,7 +96,7 @@ if DEBUG:
 else:
     DATABASES = {
         'default': {
-	    'ENGINE': 'mysql.connector.django',
+            'ENGINE': 'mysql.connector.django',
             'NAME': 'blog',
             'USER': 'blog_user',
             'PASSWORD': 'blog_secret_password_847',
@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, "static-only"),
+    os.path.join(BASE_DIR, "static-only"),
     )
 
 MEDIA_URL = 'media/'
