@@ -1,0 +1,8 @@
+.entry {
+  max-height: 800px;
+}
+
+.entry p {
+  max-height: 440px;
+  overflow: hidden;
+}
