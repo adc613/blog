@@ -1,8 +1,31 @@
 .entry {
-  max-height: 800px;
+  max-height: 250px;
+  overflow: hidden;
 }
 
-.entry p {
-  max-height: 440px;
-  overflow: hidden;
+.img {
+  width: 100%;
+}
+
+.mdi-navigation-menu {
+  font-size: 40px;
+  color: white;
+  margin-left: 10px;
+}
+
+
+
+.side-nav-header {
+  font-weight: 700;
+  color: black;
+}
+
+@media(min-width:994px){
+  .my-content{
+    margin-left:240px;
+  }
+  
+  .article {
+    margin-right: 240px;
+  }
 }

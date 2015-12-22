@@ -75,33 +75,17 @@
   }]);
     
   app.controller('BlogController', ['$http','$scope', 'Data', function($http, $scope, Data){
-    
-    function formatText(data) {
-    //console.log(text);
-      for(i = 0; i < data.length; i++){
-        console.log(i);
-        //console.log(data);
-        //text = data[i].article;
-        //console.log(text);
-        /*
-        splitText = text.split('\n');
-       
-        */
-        //data[i].article = formatedText;
-      }
-      
-      return data;
-    }
-    
+    $('.collapsible').collapsible();
     Data.getData().then(
       function(data){
         $scope.articles = data;
+        $('.collapsible').collapsible();
       },
       function(resp){
         console.log('error....');
         console.log(resp);
       });
-
+$('.collapsible').collapsible();
   }]);
 
 
@@ -114,6 +98,14 @@
     };
   });
     
+  app.directive('blogList', function(){
+    return {
+      restrict: 'E',
+      templateUrl: '/static/angular/blog_list.html',
+      controller: 'BlogController',
+      controllerAs: 'blogCtrl'
+    }
+  })
   app.controller('DetailController', ['$scope', '$routeParams', 'Data', function($scope, $routeParams, Data) {
     Data.getData().then(
       function(data){
