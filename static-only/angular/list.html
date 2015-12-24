@@ -4,7 +4,11 @@
     <div class="card-panel">
       <img class="img" width="300" src="/static/imgs/iphone-6.jpg">
       <h4 class="text-center">[[ entry.title ]]</h4>
-      <blockquote>By: Adam Collins</blockquote>
+      <blockquote>
+        <ul>
+          <li>By: [[entry.author.first_name]] [[entry.author.last_name]]</li>
+        </ul>
+      </blockquote>
       <br>
       <div> 
         <div class="entry" ng-bind-html="entry.article | articleFormatter"></div>

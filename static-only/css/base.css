@@ -23,6 +23,7 @@
 @media(min-width:994px){
   .my-content{
     margin-left:240px;
+    margin-top: 10px;
   }
   
   .article {

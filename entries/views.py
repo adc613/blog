@@ -14,7 +14,7 @@ from .forms import EntryCreationForm
 from .serializers import EntrySerializer
 
 
-class EntryViewSet(viewsets.ModelViewSet):
+class EntryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
 

@@ -1,7 +1,5 @@
 (function(){
   var app = angular.module('blogApp', ['ngRoute', 'ngSanitize']);
-  
-
     
   app.config(function($interpolateProvider, $routeProvider) {
     $interpolateProvider.startSymbol('[[');
@@ -20,12 +18,12 @@
   
   app.filter('articleFormatter', function(){
     return function(text){
+      if(typeof(text) != typeof('string')) text = '';
       splitText = text.split('\n');
-      formatedText = '<p>';
+      formatedText = '';
       for(i = 0; i < splitText.length; i++){
-        formatedText += splitText[i] + '</p><p>';
+        formatedText += '<p>' + splitText[i] + '</p>';
       }
-      formatedText += '</p>';
       return formatedText;
     }
   })
@@ -46,19 +44,6 @@
           promise = $http(req).then(
             function(resp){
               data = resp.data;
-              /*
-              console.log(data.length);
-              console.log(data);
-              for(i = 0; i < data.length; i++){
-                console.log(i);
-                
-               // console.log(formatText(data[i].article));
-                //formatText(data[i].article);
-                //article = data[i].article;
-                //article = formatText(article);
-                //data[i].article = article;
-              }
-             */
               return data;
             }, 
             function(resp){
@@ -75,17 +60,15 @@
   }]);
     
   app.controller('BlogController', ['$http','$scope', 'Data', function($http, $scope, Data){
-    $('.collapsible').collapsible();
+    $scope.pageClass = 'page-home';
     Data.getData().then(
       function(data){
         $scope.articles = data;
-        $('.collapsible').collapsible();
       },
       function(resp){
         console.log('error....');
         console.log(resp);
       });
-$('.collapsible').collapsible();
   }]);
 
 
@@ -107,6 +90,7 @@ $('.collapsible').collapsible();
     }
   })
   app.controller('DetailController', ['$scope', '$routeParams', 'Data', function($scope, $routeParams, Data) {
+    $scope.pageClass = 'page-about';
     Data.getData().then(
       function(data){
         $scope.entry = data[$routeParams.entryID - 1];
