@@ -5,8 +5,8 @@ from entries.views import EntryListView
 from .views import AngularView
 
 urlpatterns = [
-    url(r'^$', EntryListView.as_view(), name='home'),
-    url(r'^dev/$', AngularView.as_view()),
+    url(r'^old/$', EntryListView.as_view(), name='home'),
+    url(r'^$', AngularView.as_view()),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^debate/', include('debate.urls', namespace='debate')),

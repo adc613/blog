@@ -4,7 +4,7 @@
       <div class="collapsible-header side-nav-header waves-effect waves-teal">Adam</div>
       <div class="collapsible-body">
         <ul>
-          <li class="waves-effect waves-teal" ng-repeat="entry in articles | filter: {author : {id : 1}}"><a href="#/entries/{{ entry.id - 1 }}">{{ entry.title }}</a></li>
+          <li class="waves-effect waves-teal" ng-repeat="entry in articles | filter: {author : {id : 1}}"><a href="#/entries/{{ entry.id }}">{{ entry.title }}</a></li>
         </ul>
       </div>
     </li>
@@ -12,7 +12,7 @@
       <div class="collapsible-header side-nav-header waves-effect waves-teal">Arlen</div>
       <div class="collapsible-body">
         <ul>
-          <li class="waves-effect waves-teal" ng-repeat="entry in articles | filter: {author : {id : 2}}"><a href="#/entries/{{ entry.id - 1 }}">{{ entry.title }}</a></li>
+          <li class="waves-effect waves-teal" ng-repeat="entry in articles | filter: {author : {id : 2}}"><a href="#/entries/{{ entry.id }}">{{ entry.title }}</a></li>
         </ul>
       </div>
     </li>

@@ -91,7 +91,11 @@
     $scope.pageClass = 'page-about';
     Data.getData().then(
       function(data){
-        $scope.entry = data[$routeParams.entryID - 1];
+        for(i = 0; i < data.length; i++){
+           if(data[i].id == $routeParams.entryID){
+              $scope.entry = data[i];
+           }
+        }
       },
       function(error) {
         console.log('error....');
