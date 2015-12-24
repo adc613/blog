@@ -1,0 +1,32 @@
+.entry {
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.img {
+  width: 100%;
+}
+
+.mdi-navigation-menu {
+  font-size: 40px;
+  color: white;
+  margin-left: 10px;
+}
+
+
+
+.side-nav-header {
+  font-weight: 700;
+  color: black;
+}
+
+@media(min-width:994px){
+  .my-content{
+    margin-left:240px;
+    margin-top: 10px;
+  }
+  
+  .article {
+    margin-right: 240px;
+  }
+}
