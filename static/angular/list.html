@@ -2,11 +2,11 @@
   
   <div class="col l4 m6 s12 blog-card" ng-repeat="entry in articles | orderBy:'-creation_date'">
     <div class="card-panel">
-      <img class="img" width="300" ng-src="/[[ entry.image_url ]]">
-      <h4 class="text-center">[[ entry.title ]]</h4>
+      <img class="img" width="300" ng-src="/{{ entry.image_url }}">
+      <h4 class="text-center">{{ entry.title }}</h4>
       <blockquote>
         <ul>
-          <li>By: [[entry.author.first_name]] [[entry.author.last_name]]</li>
+          <li>By: {{entry.author.first_name}} {{entry.author.last_name}}</li>
         </ul>
       </blockquote>
       <br>
@@ -14,7 +14,7 @@
         <div class="entry" ng-bind-html="entry.article | articleFormatter"></div>
       </div>
       <br>
-      <a  href="#/entries/[[ entry.id - 1]]" id="btn_[[ entry.id ]]" style="background-image:none; width:95%; margin-left:2.5%; "  class="btn indigo darken-4 waves-effect waves-red">Read More</a>
+      <a  href="#/entries/{{ entry.id - 1}}" id="btn_{{ entry.id }}" style="background-image:none; width:95%; margin-left:2.5%; "  class="btn indigo darken-4 waves-effect waves-red">Read More</a>
     </div>
   </div>
   

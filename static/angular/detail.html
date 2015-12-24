@@ -1,11 +1,11 @@
 <div class="row article">
   <div class="col s12">
-    <img class="img" ng-src="/[[ entry.image_url ]]">
+    <img class="img" ng-src="/{{ entry.image_url }}">
   </div>
 </div>
 <div class="row">
   <div class="col s12">
-    <h1>[[ entry.title ]]</h1>
+    <h1>{{ entry.title }}</h1>
 
     <div class="article flow-text" ng-bind-html="entry.article | articleFormatter"></div>
   </div>

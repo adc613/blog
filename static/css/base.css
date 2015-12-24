@@ -17,6 +17,10 @@
   height: 850px;
 }
 
+.blog-card .card-panel {
+  height: 98%;
+}
+
 .side-nav-header {
   font-weight: 700;
   color: black;

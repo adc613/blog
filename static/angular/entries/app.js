@@ -1,9 +1,7 @@
 (function(){
   var app = angular.module('blogApp', ['ngRoute', 'ngSanitize']);
     
-  app.config(function($interpolateProvider, $routeProvider) {
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
+  app.config(function($routeProvider) {
     $routeProvider
       .when('/entries/:entryID', {
         templateUrl: '/static/angular/detail.html',
