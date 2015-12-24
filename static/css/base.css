@@ -13,7 +13,9 @@
   margin-left: 10px;
 }
 
-
+.blog-card {
+  height: 850px;
+}
 
 .side-nav-header {
   font-weight: 700;

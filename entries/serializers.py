@@ -12,8 +12,12 @@ class UserSerializer(serializers.ModelSerializer):
 
 class EntrySerializer(serializers.ModelSerializer):
     author = UserSerializer()
+    image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Entry
         fields = ('id', 'title', 'article', 'creation_date', 'last_modified',
-                  'image', 'author')
+                  'image', 'author', 'image_url')
+
+    def get_image_url(self, obj):
+        return obj.image.url
