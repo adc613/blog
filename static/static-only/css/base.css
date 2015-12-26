@@ -1,9 +1,4 @@
-html body {
-    background-color:#ECEFF1;
-}
-
 .entry {
-
   max-height: 250px;
   overflow: hidden;
 }
