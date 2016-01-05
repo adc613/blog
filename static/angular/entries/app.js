@@ -78,7 +78,7 @@
     Data.getData().then(
       function(data){
         $scope.articles = data;
-        setTimeout(load, 50);
+        setTimeout(load, 100);
       },
       function(resp){
         console.log('error....');

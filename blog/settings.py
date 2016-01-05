@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['BLOG_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # If true it runs sqlite instead of MySQL
-DEBUG_DATABASE = True
+DEBUG_DATABASE = False
 
 
 ALLOWED_HOSTS = ['.newagehacker.com', '.techlyfe.me']
