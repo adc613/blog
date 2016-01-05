@@ -7,6 +7,11 @@ html body {
   overflow: hidden;
 }
 
+.article {
+    max-width:1200px;
+
+}
+
 .img {
   width: 100%;
 }
@@ -43,3 +48,4 @@ html body {
     margin-right: 240px;
   }
 }
+
