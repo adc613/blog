@@ -1,6 +1,6 @@
-<div class="row" ng-controller="BlogController as blogCtrl">
+<div class="row grid" ng-controller="BlogController as blogCtrl">
   
-  <div class="col l4 m6 s12 blog-card" ng-repeat="entry in articles | orderBy:'-creation_date'">
+  <div class="col l4 m6 s12 blog-card grid-item" ng-repeat="entry in articles | orderBy:'-creation_date'">
     <div class="card-panel">
       <img class="img" width="300" ng-src="/{{ entry.image_url }}">
       <h4 class="text-center">{{ entry.title }}</h4>
@@ -17,6 +17,5 @@
       <a  href="#/entries/{{ entry.id }}" id="btn_{{ entry.id }}" style="background-image:none; width:95%; margin-left:2.5%; "  class="btn indigo darken-4 waves-effect waves-red">Read More</a>
     </div>
   </div>
-  
   
 </div>

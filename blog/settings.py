@@ -25,6 +25,10 @@ SECRET_KEY = os.environ['BLOG_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# If true it runs sqlite instead of MySQL
+DEBUG_DATABASE = True
+
+
 ALLOWED_HOSTS = ['.newagehacker.com', '.techlyfe.me']
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -87,7 +91,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-if DEBUG:
+if DEBUG_DATABASE:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -122,13 +126,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = (
+"""
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static-only"),
-    )
+    ]
+"""
 
 MEDIA_URL = 'media/'
 

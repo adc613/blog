@@ -59,9 +59,26 @@
     
   app.controller('BlogController', ['$http','$scope', 'Data', function($http, $scope, Data){
     $scope.pageClass = 'page-home';
+
+
+    var reload = function (){
+        $('.grid').masonry('reloadItems');
+        console.log('reload');
+        setTimeout(reload, 1000);
+    };
+
+    var load =  function() {
+        $('.grid').masonry({
+            itemSelector: '.grid-item'
+        });
+        console.log('load');
+        setTimeout(reload, 10000);
+    };
+
     Data.getData().then(
       function(data){
         $scope.articles = data;
+        setTimeout(load, 50);
       },
       function(resp){
         console.log('error....');
@@ -105,3 +122,4 @@
   }]);
 
 })();
+

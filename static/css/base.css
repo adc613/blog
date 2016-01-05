@@ -1,3 +1,7 @@
+html body {
+    background-color:#ECEFF1;
+}
+
 .entry {
   max-height: 250px;
   overflow: hidden;
@@ -13,8 +17,14 @@
   margin-left: 10px;
 }
 
+/*
 .blog-card {
   height: 850px;
+}
+*/
+
+.grid-item {
+    width:30%;
 }
 
 
