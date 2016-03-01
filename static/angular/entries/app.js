@@ -62,9 +62,10 @@
 
 
     var reload = function (){
-        $('.grid').masonry('reloadItems');
+        $('.grid').masonry({
+            itemSelector: '.grid-item'
+        });
         console.log('reload');
-        setTimeout(reload, 1000);
     };
 
     var load =  function() {
@@ -72,7 +73,11 @@
             itemSelector: '.grid-item'
         });
         console.log('load');
-        setTimeout(reload, 10000);
+
+	$('.img').ready(function(){
+            reload();
+        });
+
     };
 
     Data.getData().then(
