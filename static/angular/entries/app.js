@@ -59,38 +59,29 @@
     
   app.controller('BlogController', ['$http','$scope', 'Data', function($http, $scope, Data){
     $scope.pageClass = 'page-home';
-
-
-    var reload = function (){
-        $('.grid').masonry({
-            itemSelector: '.grid-item'
-        });
-        console.log('reload');
-    };
+    var timeout;
 
     var load =  function() {
         $('.grid').masonry({
             itemSelector: '.grid-item'
         });
         console.log('load');
-
-	$('.img').ready(function(){
-            reload();
-        });
-
     };
+
+    $('img').ready(function(){
+        clearTimeout(timeout);
+        timeout = setTimeout(load, 500);
+    });
 
     Data.getData().then(
       function(data){
         $scope.articles = data;
-        setTimeout(load, 100);
       },
       function(resp){
         console.log('error....');
         console.log(resp);
       });
   }]);
-
 
   app.directive('blogEntry', function() {
     return {
@@ -109,6 +100,7 @@
       controllerAs: 'blogCtrl'
     }
   })
+
   app.controller('DetailController', ['$scope', '$routeParams', 'Data', function($scope, $routeParams, Data) {
     $scope.pageClass = 'page-about';
     Data.getData().then(
@@ -125,6 +117,5 @@
       }
     );
   }]);
-
 })();
 
